@@ -1,0 +1,506 @@
+<!-- /sections/footer.liquid -->
+
+
+{% assign logo_image_width = section.settings.logo_image_width | append: "px" %}
+{% assign retina_size = section.settings.logo_image_width | times: 2 %}
+
+<footer class="site-footer-wrapper {% if section.settings.image %} site-footer-wrapper--image{% endif%}" role="contentinfo" data-section-id="{{ section.id }}" data-section-type="footer">
+  {%- if section.settings.image -%}
+    {% render 'image-background', img_object: section.settings.image, frame_height_class: 'footer__image', bg_position: section.settings.bg_position %}
+  {%- endif -%}
+  <div class="site-footer">
+    {% if section.settings.footer_logo %}
+    <style>
+      .footer__logo img { width: {{ logo_image_width }}; }
+    </style>
+    <a href="{{ routes.root_url }}" class="footer__logo">
+      {% assign logo_url = section.settings.footer_logo | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+      <img 
+        class="lazyload" 
+        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+        data-src="{{ logo_url }}" 
+        data-widths="[{{ section.settings.logo_image_width }}, {{ retina_size }}]"
+        data-sizes="auto"
+        data-aspectratio="{{ section.settings.footer_logo.aspect_ratio }}"
+        data-parent-fit="contain"
+        alt="{{ section.settings.footer_logo.alt | default: shop.name | strip_html | escape }}" 
+        id="footerLogoImg-{{ section.id }}"/>
+    </a>
+    {% endif %}
+    <div class="grid grid--uniform">
+
+      {% case section.blocks.size %}
+        {% when 1 %}
+          {% assign footer_column_width = 'large-up--one-half' %}
+        {% when 2 %}
+          {% assign footer_column_width = 'medium-up--one-half' %}
+        {% when 3 %}
+          {% assign footer_column_width = 'large-up--one-third' %}
+        {% when 4 %}
+          {% assign footer_column_width = 'large-up--one-quarter medium--one-half' %}
+      {% endcase %}
+
+      {% for block in section.blocks %}
+        {% case block.type %}
+
+          {% when 'linklist' %}
+            {% assign linklist = linklists[block.settings.linklist] %}
+            {% assign linklist_title = block.settings.title | default: linklist.title %}
+            <div class="footer__block grid__item {{ footer_column_width }}" {{ block.shopify_attributes }}>
+              {% if linklist_title != blank %}
+                <h2 class="h5 footer__block__title">{{ linklist_title | escape }}
+                  <span class="right icon-down-arrow"></span>
+                </h2>
+              {% endif %}
+              <ul class="footer__quicklinks unstyled">
+                {% for link in linklist.links %}
+                  <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+
+          {% when 'page' %}
+            {% assign page = pages[block.settings.page] %}
+            {% if page == blank or page.empty? %}
+              <div class="footer__block grid__item {{ footer_column_width }}" {{ block.shopify_attributes }}>
+                <h2 class="h5 footer__block__title">{{ shop.name }}</h2>
+                <div class="rte">{{ 'home_page.onboarding.no_content' | t }}</div>
+              </div>
+            {% else %}
+              <div class="footer__block grid__item {{ footer_column_width }}" {{ block.shopify_attributes }}>
+                <h2 class="h5 footer__block__title">{{ page.title | escape }}</h2>
+                <div class="rte">{{ page.content }}</div>
+              </div>
+            {% endif %}
+
+          {% when 'social' %}
+            <div class="footer__block grid__item {{ footer_column_width }}" {{ block.shopify_attributes }}>
+              {%- assign social_accounts = 'Instagram, Facebook, Twitter, TikTok, Pinterest, Tumblr, YouTube, Vimeo, Linkedin, Snapchat, Feed' | split: ', ' -%}
+              {%- if block.settings.title != blank -%}
+                <h2 class="footer_acc_title h5 footer__block__title">{{ block.settings.title | escape }}
+                  <span class="right icon-down-arrow"></span>
+                </h2>
+              {%- endif -%}
+              {% if block.settings.richtext != '<p></p>' %}
+                <div class="footer_acc_desc rte footer__social__text">
+                  {{ block.settings.richtext }}
+                </div>
+              {% endif %}
+              
+                 <div class="footer-social-icons"> <ul class="footer__social unstyled inline-list"> <li> <a href="https://www.facebook.com/myjewelworldUK/" title="My Jewel World on Facebook" rel="me" target="_blank" class="fa fa-facebook-f"></a></li>
+                <li> <a href="https://www.youtube.com/channel/UC0NwhN04cCC6etgso-2Z1ew" title="My Jewel World on YouTube" rel="me" target="_blank" class="fa fa-youtube-play"></a></li> 
+                <li> <a href="https://www.instagram.com/myjewelworlduk/?hl=en" title="My Jewel World on Instagram" rel="me" target="_blank" class="fa fa-instagram"></a></li>
+                </ul></div>
+            </div>
+
+          {% when 'text' %}
+            <div class="footer__block grid__item {{ footer_column_width }}" {{ block.shopify_attributes }}>
+              {%- if block.settings.title != blank -%}
+                <h2 class="h5 footer__block__title">{{ block.settings.title | escape }}</h2>
+              {%- endif -%}
+              <div class="rte">{{ block.settings.text }}</div>
+            </div>
+
+          {% when 'newsletter' %}
+            <div class="footer__block grid__item {{ footer_column_width }}" {{ block.shopify_attributes }}>
+              <h2 class="h5 footer__block__title">{{ 'layout.footer.newsletter_title' | t }}
+                <span class="right icon-down-arrow"></span>
+              </h2>
+              <div class="">
+              <div class="rte footer__newsletter__text">
+                {{ block.settings.richtext }}
+              </div>
+
+              {%- render 'newsletter-form' form_id: 'contact-newsletter-footer', show_name: block.settings.enable_name, field_id: 'email_input_footer', button_id: 'subscribe' -%}
+              </div>
+            </div>
+
+          {% else %}
+        {% endcase %}
+      {% endfor %}
+    </div>
+
+    <div class="grid_cstm text-center">
+
+      {% if section.settings.footer_payment_enable %}
+        {% unless shop.enabled_payment_types == empty %}
+          <ul class="custom_footer_payment footer__payment payment-icons inline-list">
+            {% for type in shop.enabled_payment_types %}
+              <li>{{ type | payment_type_svg_tag: class:'payment-icon' }}</li>
+            {% endfor %}
+          <li class="clearpay">{% render 'icons',icon:'Clearpay' %}</li>
+             <li class="Klarna">{% render 'icons',icon:'Klarna' %}</li>
+          </ul>
+        {% endunless %}
+      {% endif %}
+      
+            <div class="footer__secondary">
+        <ul class="footer__copyright inline-list unstyled">
+          <li>
+           <p class="credits"> © 2022. All Rights Reserved. Worldwide Bargains Limited t/a   <a href=" {{ shop.secure_url }}">  {{ shop.name }} {% comment %} {{ 'now' | date: "%Y" }} {% endcomment%}  </a> | Registered in England and Wales Co No. 11741922.
+            </p>
+          </li>
+          {% for link in linklists[section.settings.footer_secondary_linklist].links %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+
+          <!-- The following lines fix Lighthouse security warnings on the Shopify link.-->
+          {%- assign powered_by_link_html = powered_by_link -%}
+          {%- if powered_by_link_html contains 'rel="' -%}
+            {%- assign powered_link_rel_text = powered_by_link_html | split: 'rel="' -%}
+            {%- assign powered_link_rel_text = powered_link_rel_text[1] | split: '"' | first -%}
+            {%- assign powered_link_rel = 'rel="' | append: powered_link_rel_text | append: '"' -%}
+            {%- assign powered_by_link_html = powered_by_link_html | replace_first: powered_link_rel, '' -%}
+          {%- endif -%}
+          {%- if powered_by_link_html contains '<a ' -%}
+            {%- assign powered_by_link_html = powered_by_link_html | replace: '<a ', '<a rel="noopener" ' -%}
+          {%- endif -%}
+          {%- assign powered_by_link = powered_by_link_html -%}
+
+
+
+          <!-- Remove the following line to delete 'Powered by Shopify' from your footer -->
+          <!-- Do not delete below this line -->
+
+
+
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  {% if section.settings.image %}
+    {% assign overlay_opacity = section.settings.overlay_opacity | times: 0.01 %}
+    <div class="image-overlay" style="background-color:{{ section.settings.overlay_color }} !important; opacity:{{ overlay_opacity }};"></div>
+  {% endif %}
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "label": "Logo",
+      "type": "image_picker",
+      "id": "footer_logo",
+      "info": "400 x 200px .png"
+    },
+    {
+      "type": "range",
+      "id": "logo_image_width",
+      "label": "Logo width (in pixels)",
+      "min": 50,
+      "max": 400,
+      "step": 5,
+      "unit": "px",
+      "default": 150
+    },
+    {
+      "type": "header",
+      "content": "Optional background image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "bg_position",
+      "label": "Position",
+      "default": "center-center",
+      "info": "Requires the 'Image parallax' setting to be disabled",
+      "options": [
+        { "label": "Top", "value": "center-top" },
+        { "label": "Right", "value": "right-center" },
+        { "label": "Center", "value": "center-center" },
+        { "label": "Left", "value": "left-center" },
+        { "label": "Bottom", "value": "center-bottom" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 75
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay color",
+      "default": "#fff"
+    },
+    {
+      "type": "header",
+      "content": "Bottom bar"
+    },
+    {
+      "type": "link_list",
+      "id": "footer_secondary_linklist",
+      "label": "Link List",
+      "info": "This menu won't show dropdown items."
+    },
+    {
+      "type": "checkbox",
+      "id": "footer_payment_enable",
+      "label": "Show payment types",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "language selector",
+      "info": "To add a language, go to your [language settings.](/admin/settings/languages)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_locale_selector",
+      "label": "Show language selector",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Currency selector",
+      "info": "To add a currency, go to your [payment settings.](/admin/settings/payments)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_currency_selector",
+      "label": "Show currency selector",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "type",
+      "label": "Type",
+      "options": [
+        {
+          "value": "currency",
+          "label": "Currency"
+        },
+        {
+          "value": "country",
+          "label": "Country"
+        }
+      ]
+    }
+  ],
+  "blocks" : [
+    {
+      "type": "linklist",
+      "name": "Link list",
+      "settings": [
+        {
+           "type": "link_list",
+           "id": "linklist",
+           "label": "Link list",
+           "default": "footer",
+           "info": "This menu won't show dropdown items."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        }
+      ]
+    },
+    {
+      "type": "newsletter",
+      "name": "Newsletter",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Subscribers are under 'Accepts Marketing' in your [customer admin](/admin/customers)."
+        },
+        {
+          "id": "richtext",
+          "type": "richtext",
+          "label": "Description",
+          "default": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_name",
+          "label": "Show name field",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "social",
+      "name": "Social",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Social"
+        },
+        {
+          "type": "richtext",
+          "id": "richtext",
+          "label": "Text",
+          "default": "<p></p>"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Text"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Share store details, promotions, or brand content with your customers.</p>"
+        }
+      ]
+    },
+    {
+      "type": "page",
+      "name": "Page",
+      "settings": [
+        {
+          "id": "page",
+          "type": "page",
+          "label": "Page"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .footer__block{
+    margin-top:30px;
+  }
+  .site-footer-wrapper{
+    background-color:#f1f1f1;
+  }
+  .footer__payment {
+    width: 100%;
+    padding-top: 30px;
+    margin: 0;
+    justify-content: center;
+    text-align: -webkit-center;
+    text-align: center;
+}
+  .footer-social-icons li a:hover{
+    font-size: 22px;
+    color: #03A196;
+}
+  @media only screen and (max-width: 768px){
+   .footer__payment {
+   display: block;
+   margin: 0%;
+   display: block;
+   text-align: center;
+}
+  }
+   .credits{
+  text-transform:capitalize;
+     font-style: normal;
+     line-height: 1.6em; 
+     font-size: 13px;
+     letter-spacing: 0;
+     margin: 0;
+     margin-bottom: 20px;
+   }
+  .footer__copyright{
+     margin: 0;
+  }
+  .footer__payment{
+    width: 100%;
+    padding-top: 30px;
+  }
+  .grid_cstm .footer__secondary{
+    clear: both;
+  }  
+  .footer-social-icons li a{
+  font-size:22px;}
+  
+  .site-footer-wrapper a:hover{
+    color: #03A196;
+} 
+   #subscribe:hover{
+   background:rgb(96 210 225);
+ }
+ @media only screen and (min-width: 750px) { 
+ .site-footer-wrapper span.right.icon-down-arrow {
+    display: none;
+  }
+ }
+/*-------mobile view footer css starts------*/  
+  @media only screen and (max-width: 749px) {
+   .grid.grid--uniform, .grid_cstm  {
+    width: 90%;
+    margin: auto;
+    padding: 20px 0;
+  }
+    .footer__block.grid__item {
+      padding-left: 0;
+    }
+   .icon-down-arrow:before {
+    content: "+";
+  }
+    .footer__block__title {
+    border-top: 1px solid #1b1f23;
+/*     border-bottom: 1px solid #1b1f23; */
+    margin-bottom: 0px;
+    padding: 10px 10px 5px;
+  }
+    .footer__quicklinks, .footer_acc_desc {
+    display: none;
+    padding: 0 10px;
+  }
+   
+   .footer-social-icons {
+     display: none;
+   }
+   .footer__block {
+    margin-top: 0px !important;
+    margin-bottom: 0;
+   }
+    .footer__newsletter__text {
+    padding-left: 10px;
+   }
+    form#contact-newsletter-footer {
+    padding-left: 10px;
+   }
+}
+li.clearpay svg {
+    width: 40px;
+    height: 22px;
+    background: #b2fce4;
+}
+/*-------mobile view footer css ends------*/   
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+  
+  $(document).ready(function(){
+    if ($(window).width() < 750) {
+    $('.footer__block__title').click(function(){
+    	$(this).parent().find('.footer__quicklinks').slideToggle('slow');
+    });
+    $('.footer_acc_title').click(function(){
+    	$(this).parent().find('.footer_acc_desc').slideToggle('slow');
+    });
+    }
+  });  
+</script>
+

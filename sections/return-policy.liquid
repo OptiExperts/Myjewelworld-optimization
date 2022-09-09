@@ -1,0 +1,74 @@
+<span class="sub_heading_rp"><p>{{section.settings.richtxt}}</p></span>
+<!-- <div class="feature_divider"></div> -->
+  	
+<div class="imp">
+{% for block in section.blocks %}
+  <div class="cstmAccordian">
+    <button class="accordion">{{block.settings.text1}}
+      <span class="right icon-down-arrow"></span>
+    </button>
+    <div class="panel">
+      <p> {{block.settings.content}}</p>
+    </div>
+  </div>
+{% endfor %}
+</div>
+<!-- <div class="feature_divider2"></div> -->
+<button style="margin-left:auto;margin-right:auto;display:block;" class="btn_colors back-to-help">
+  <a href="{{section.settings.buttonlink}}"  target="_self">{{section.settings.buttonlabel}}
+  </a>
+</button>
+
+{% schema %}
+  {
+    "name": "Return policy",
+ 	"settings": [
+ 	  {
+        "id" : "richtxt",
+        "type" : "text",
+        "label" : "Description"
+      },
+	  {
+        "type": "text",
+        "id": "buttonlabel",
+        "label": "Button label"
+      },
+      {
+        "type": "url",
+        "id": "buttonlink",
+        "label": "Button link"
+      }],
+	"blocks" : [
+      {
+         "name" : "Add",
+         "type" : "text",
+		 "limit": 11,
+
+          "settings" :[
+           {
+              "id" : "text1",
+              "type" : "text",
+              "label" : "enter text"
+           },
+           {
+              "id" : "content",
+              "type" : "richtext",
+              "label" : "enter text"
+            }
+          ]}
+		],
+    "presets" : [
+      {
+        "name" : "Return Policy",
+        "category" : "Return Policy Section"
+      }]
+}
+{% endschema %}
+
+<script>
+  $(document).ready(function(){
+    $('.accordion').click(function(){
+    	$(this).parent().find('.panel').slideToggle('slow');
+    });
+  });  
+</script>

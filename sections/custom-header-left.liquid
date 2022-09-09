@@ -1,0 +1,52 @@
+<!-----sections/custom-header-left.liquid----->
+
+<ul class="header_Contact_sec">
+  <li><a href="{{section.settings.contact1}}">Contact</a></li>
+  <li><a href="#contact">Help</a></li>
+</ul>
+
+
+{% schema %}
+  {
+    "name": "Custom Header",
+    "settings": [{
+  "type": "url",
+  "id": "contact1",
+  "label": "Contact_link"
+}],
+"presets":[{"name":"Custom Header",
+            "category":"custom"}]
+  }
+{% endschema %}
+
+<style>
+.header_Contact_sec {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.header_Contact_sec li {
+  float: left;
+}
+
+.header_Contact_sec li a {
+   font-family: p22_undergroundthin;
+   font-weight: bold;
+   font-size: 16px;
+   text-transform: none;
+   color: #000000;
+   line-height: 1.6em;
+   display: block;
+   color: white;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+}
+
+.header_Contact_sec li a:hover {
+  color: skyblue;
+}
+</style>

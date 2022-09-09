@@ -1,0 +1,65 @@
+      <div class="container assuredbrilance_section">
+        <div class="section-caption">
+          <div class="section-one">
+            <img src="{{ section.settings.assuredbrilance-img1 | img_url:'master' }}" alt="Love Matters" class="img-fluid">
+          </div>
+          <div class="section-two">
+            <h4 class="my-4">{{ section.settings.brillance-heading1 }}<br> {{ section.settings.Hometop-heading2 }}<br><br> {{ section.settings.Hometop-heading3 }}</h4>
+            <p class="mb-4 mb-md-0">{{ section.settings.brillance-heading2 }}</p>
+          </div>
+          <div class="section-three">
+            <img src="{{ section.settings.assuredbrilance-img2 | img_url:'master' }}" alt="Love Matters" class="img-fluid">
+          </div>
+        </div>
+      </div>
+
+{% schema %}
+{
+  "name": "Hometop",
+   "max_blocks": 1,
+  "settings": [
+     {
+        "type":      "image_picker",
+        "id":        "assuredbrilance-img1",
+        "label":     "Brillance Left Image"
+    },
+    {
+        "type":      "image_picker",
+        "id":        "assuredbrilance-img2",
+        "label":     "Brillance Right Image"
+    },
+    {
+        "type":      "text",
+        "id":        "brillance-heading1",
+        "label":     "Brillance Heading"
+    },
+     
+     {
+        "type":      "text",
+        "id":        "brillance-heading2",
+        "label":     "Brillance Sub Heading"
+    }
+],
+  
+"blocks": [
+    {
+      "type": "image",
+      "name": "Assured",
+      "settings": [
+    ]
+    }
+  ],
+  "presets": [
+    {
+  "name": "Custom-assured",
+    "category": "image",
+"blocks": [
+      {
+        "type": "image",
+      "settings": {
+     }
+    }
+  ]}]
+}
+
+{% endschema %}

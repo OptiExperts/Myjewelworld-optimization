@@ -1,0 +1,350 @@
+<!------sections/custom-collection-section.liquid------>
+<div class="custom-coll-container">
+  <div class="custom-collection-upper">
+    <div class="main-heading">
+          {{section.settings.main_heading | escape }}
+    </div>
+  </div>
+  
+  <div class="custom-collection-lower">
+   {% for block in section.blocks %} 
+    
+   {% if block.type =='image'%}
+    <div class="custom-collection-section_3box">  
+      
+      <div class="image-category-1">
+        {% if block.settings.collection_image_1 !=blank %}
+        <img class="lazy2" data-src="{{block.settings.collection_image_1 | img_url: 'master'}}" >
+        {% endif %}
+        <a href="{{block.settings.collection_url_1}}" >
+          <figcaption>
+            <div class="image-title-1">{{block.settings.collection_title_1}}</div>
+            <div class="second-heading-1">{{block.settings.second_heading_1}}</div>
+          </figcaption>  
+        </a>
+      </div>
+      
+      <div class="image-category-1"> 
+		{% if block.settings.collection_image_2 !=blank %}
+          <img class="lazy2" data-src="{{block.settings.collection_image_2 | img_url: 'master'}}" >
+        {% endif %}
+        <a href="{{block.settings.collection_url_2}}" >
+          <figcaption>
+            <div class="image-title-1">{{block.settings.collection_title_2}}</div>
+            <div class="second-heading-1">{{block.settings.second_heading_1}}</div>
+          </figcaption>
+        </a>
+     </div> 
+             
+     <div class="image-category-1"> 
+		{% if block.settings.collection_image_3 !=blank %}
+          <img class="lazy2" data-src="{{block.settings.collection_image_3 | img_url: 'master'}}" >
+        {% endif %} 
+        <a href="{{block.settings.collection_url_3}}" >
+          <figcaption>
+            <div class="image-title-1">{{block.settings.collection_title_3}}</div>
+            <div class="second-heading-1">{{block.settings.second_heading_1}}</div>
+          </figcaption>
+       </a>
+      </div>
+      
+    </div>
+   {% endif %}
+    
+   {% if block.type =='text'%}
+    <div class="custom-collection-section_2box">
+      
+      <div class="image-category-2">
+		{% if block.settings.image_1 !=blank %}
+          <img class="lazy2" data-src="{{block.settings.image_1 | img_url: 'master'}}" >
+        {% endif %}           
+       <a href="{{block.settings.image_url_1}}"> 
+        <figcaption>
+          <div class="image-title-2">{{block.settings.image_title_1}}</div>
+          <div class="second-heading-2">{{block.settings.second_heading_2}}</div>
+        </figcaption>
+       </a>
+      </div> 
+           
+      <div class="image-category-2"> 
+		{% if block.settings.image_2 !=blank %}
+          <img class="lazy2" data-src="{{block.settings.image_2 | img_url: 'master'}}" >
+        {% endif %} 
+        <a href="{{block.settings.image_url_2}}">
+          <figcaption>
+            <div class="image-title-2">{{block.settings.image_title_2}}</div>
+            <div class="second-heading-2">{{block.settings.second_heading_2}}</div>
+          </figcaption>
+        </a>
+      </div> 
+      
+    </div>
+   {% endif %}
+    
+   {% endfor %}
+  </div>
+  
+</div>
+
+{% schema %}
+  {
+    "name": "Custom Collection Section",
+    "settings": [
+	 {
+  	   "type": "text",
+  	   "id": "main_heading",
+  	   "label": "Main Heading",
+  	   "default": "Section Title"
+	 }	 
+	],
+	"blocks": [
+	 {
+	   "type": "image",
+	   "name": "Collection Category for 3",
+	   "settings": [
+		{
+  		  "type": "image_picker",
+  		  "id": "collection_image_1",
+  		  "label": "Collection Image 1"
+		},
+		{
+  		  "type": "url",
+  		  "id": "collection_url_1",
+  		  "label": "Collection URL 1"
+		},
+		{
+  	   	  "type": "text",
+  	      "id": "collection_title_1",
+  	      "label": "Collection Title 1"
+		},
+		{
+  		  "type": "text",
+  		  "id": "second_heading_1",
+  		  "label": "Second Heading 1",
+		  "default": "Shop"
+		},
+		{
+  		  "type": "image_picker",
+  		  "id": "collection_image_2",
+  		  "label": "Collection Image 2"
+		},
+		{
+  		  "type": "url",
+  		  "id": "collection_url_2",
+  		  "label": "Collection URL 2"
+		},
+		{
+  	   	  "type": "text",
+  	      "id": "collection_title_2",
+  	      "label": "Collection Title 2"
+		},
+		{
+  		  "type": "image_picker",
+  		  "id": "collection_image_3",
+  		  "label": "Collection Image 3"
+		},
+		{
+  		  "type": "url",
+  		  "id": "collection_url_3",
+  		  "label": "Collection URL 3"
+		},
+		{
+  	   	  "type": "text",
+  	      "id": "collection_title_3",
+  	      "label": "Collection Title 3"
+		}
+	   ]
+	 },
+	 {
+       "type": "text",
+       "name": "Collection Category for 2",
+       "settings": [
+        {
+  		  "type": "image_picker",
+  		  "id": "image_1",
+  		  "label": "Image 1"
+		},
+		{
+  		  "type": "url",
+  		  "id": "image_url_1",
+  		  "label": "Imagel URL 1"
+		},
+		{
+  	   	  "type": "text",
+  	      "id": "image_title_1",
+  	      "label": "Image Title 1"
+		},
+		{
+  		  "type": "text",
+  		  "id": "second_heading_2",
+  		  "label": "Second Heading_2",
+		  "default": "Shop"
+		},
+		{
+  		  "type": "image_picker",
+  		  "id": "image_2",
+  		  "label": "Image 2"
+		},
+		{
+  		  "type": "url",
+  		  "id": "image_url_2",
+  		  "label": "Image URL 2"
+		},
+		{
+  	   	  "type": "text",
+  	      "id": "image_title_2",
+  	      "label": "Image Title 2"
+		}
+       ]
+     }
+	],
+	"presets": [
+	 {	
+       "name": "Custom Collection Section",
+	   "category": "collection",
+	   "blocks": [
+		{
+		  "type": "image"
+		},
+		{
+		  "type": "text"
+		}
+	   ]
+	 }
+	]
+  }
+{% endschema %}
+
+<style>
+  .custom-coll-container {
+    margin: auto;
+    max-width: 1200px;
+    width: 100%;
+    font-family: inherit;
+/*     margin-top: 50px; */
+  }
+  .custom-collection-upper {margin: 15px 0;}
+  .main-heading {
+    text-align:center;
+    font-family: 'Great Vibes', cursive;
+    text-transform: capitalize;
+    font-size: 54px;
+    font-weight: inherit;
+  }
+  .custom-collection-lower {
+    display: block;
+  }
+  .main-heading{
+    font-size: 60px;
+    font-family: 'Great Vibes', cursive;
+    text-transform:capitalize;
+    
+  }
+  
+  .custom-collection-section_3box, .custom-collection-section_2box {
+    display: flex;
+  }
+ .custom-collection-section_3box img, .custom-collection-section_2box img {
+    object-fit: cover;
+    border-radius: 10px;
+    max-width: 100%;
+    max-height: 100%;
+    height: 290px !important;
+  }
+  .custom-collection-section_3box figcaption, .custom-collection-section_2box figcaption {
+     transition: 0.55s;
+  }
+  .custom-collection-section_3box figcaption:hover, .custom-collection-section_2box figcaption:hover {
+    box-shadow: rgb(96 210 225 / 0%) 0px 2px 4px 0px, rgb(96 210 225 / 73%) 0px 2px 16px 0px;
+  }
+  
+ .image-category-1, .image-category-2 {
+    position: relative;
+    padding-right: 12px;
+    padding-left: 5px;
+ } 
+ .custom-collection-section_3box figcaption {
+   position: absolute;
+   top: 0px;
+   width: 96%; 
+   height: 94%;
+   border-radius: 13px;
+   background: rgb(0 0 0 / 25%);
+ }  
+ .custom-collection-section_2box figcaption {
+    position: absolute;
+    top: 0px;
+    width: 97.5%; 
+    height: 94%;
+    border-radius: 13px;
+    background: rgb(0 0 0 / 25%);
+  }
+ 
+ .custom-collection-section_3box a, .custom-collection-section_2box a {color: white;}
+ .custom-collection-section_3box .image-title-1,.custom-collection-section_2box .image-title-2 {
+    font-size: 25px;
+    line-height: 6;
+    padding-left: 35px;
+    font-family: 'Antic Didone', serif;
+  }
+  .second-heading-1, .second-heading-2{
+    font-size: 18px;
+    position: absolute;
+    top: 95px;
+    padding-left: 35px;
+    }
+/*   .image-title-1:hover, .image-title-2:hover, .second-heading-1:hover,.second-heading-2:hover {
+     color: #60d2e1;
+   } */
+  figcaption:hover {
+    color: #60d2e1;
+  }
+  @media screen and (max-width: 768px) {
+    .custom-collection-section_3box, .custom-collection-section_2box {
+      display: block;
+    }
+    .custom-collection-section_3box img, .custom-collection-section_2box img {
+      width: 699px;
+      margin: 0 4%;
+      margin-bottom: 20px;
+    }
+   
+  }
+/*   new css */
+   @media screen and (max-width: 768px) {
+    .image-category-1, .image-category-2 {
+    position: relative;
+    margin-left: 1%;
+    margin-right: 8%;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+    .custom-collection-section_3box figcaption {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    margin-left: 4%;
+    height: 93%;
+   
+}
+    .custom-collection-section_2box figcaption {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 93%;
+    margin-left: 4%;
+  
+}
+    .custom-collection-section_3box .image-title-1, .custom-collection-section_2box .image-title-2 {
+    font-size: 30px;
+    padding-left:4%;
+}
+    .second-heading-1, .second-heading-2 {
+    font-size:22px;
+    position: absolute;
+    top: 40%;
+    padding-left: 4%;
+}
+   }
+  
+</style>

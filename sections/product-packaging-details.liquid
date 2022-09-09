@@ -1,0 +1,259 @@
+<!----------sections/product-packaging-details.liquid----------->
+
+<div class="product-packaging-details">
+{% for block in section.blocks %}
+{% if block.type == 'image_with_text' %}
+  <div class="image_cus_text container">
+      <section class="featured-link--section featured-link--image section-{{ forloop.index }} layout-{{block.settings.layout}}">
+
+        {% capture image_layout %}
+        <div class="featured-link--half featured-link--image featured-{{ forloop.index}} ">
+          <div class="featured-link--wrap">
+            {% if block.settings.image %}
+            {{ block.settings.image | img_url: '1024x' | img_tag: block.settings.image.alt }}
+            {% else %}
+            {% capture i %}{% cycle "1", "2", "3", "4", "5", "6" %}{% endcapture %}
+            {{ 'collection-' | append: i | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
+          </div>
+        </div>
+        {% endcapture %}
+
+        {% if block.settings.layout == 'right' %}
+        {{ image_layout }}
+        {% endif %}
+
+        <div class="featured-link--half featured-text-{{ forloop.index}}">
+
+          <div class="info text-align--{{block.settings.frontpage_text_align}}">
+            {% if block.settings.image_div != blank %}
+            <div class="inner-image-div"><img src="{{ block.settings.image_div | img_url:'master' }}"></div>
+            {% endif %}
+            <h3 class="detail_title">
+              {{ block.settings.title }}
+            </h3>
+            {% if block.settings.text != blank %}
+            <div class="description_cstm">{{ block.settings.text }}</div>
+            {% endif %}
+            {% if block.settings.button_label != blank %}
+            <a {% if block.settings.button_link != blank %}href="{{ block.settings.button_link }}"{% endif %} class="action_button">
+              {{ block.settings.button_label }}
+            </a>
+            {% endif %}
+          </div>
+        </div>
+
+        {% if block.settings.layout == 'left' %}
+        {{ image_layout }}
+        {% endif %}
+
+      </section>
+  </div>
+ {% endif %}
+{% endfor %}
+</div>
+  
+{% schema %}
+  {
+    "name": "Product Packaging Details",
+    "settings": [],
+	"blocks": [
+    {
+  	  "type": "image_with_text",
+  	  "name": "Image with text",
+  	  "settings": [
+      {
+  		"type": "image_picker",
+  		"id": "image",
+  		"label": "Image"
+  	  },
+   	  {
+  		"type": "select",
+  		"id": "layout",
+  		"label": "Layout",
+  		"default": "left",
+  		"options": [
+  	    {
+  		  "value": "right",
+  		  "label": "Image on left"
+  	    },
+  	    {
+  		  "value": "left",
+  		  "label": "Image on right"
+  	    }
+       ],
+  		  "default": "right"
+  	  },
+  	  {
+  		"type": "text",
+  		"id": "title",
+  		"label": "Heading",
+  		"default": "Headline"
+  	  },
+  	  {
+  		"type": "image_picker",
+  		"id": "image_div",
+  		"label": "inner image"
+  	  },
+      {
+  		"type": "richtext",
+  		"id": "text",
+  		"label": "Text",
+  		"default": "<p>Vestibulum fringilla pede sit amet augue. Pellentesque habitant morbi tristique senecrutrum eu, nisl.</p>"
+  	  },
+  	  {
+  		"type": "text",
+  		"id": "button_label",
+  		"label": "Button label"
+  	  },
+  	  {
+  		"type": "url",
+  		"id": "button_link",
+  		"label": "Button link"
+   	  },
+  	  {
+   		"type": "select",
+  		"id": "frontpage_text_align",
+  		"label": "Text alignment",
+  		"options": [
+  		{
+  		  "value": "left",
+  		  "label": "Left"
+  		},
+  		{
+  		  "value": "center",
+  		  "label": "Center"
+  		},
+  		{
+  		  "value": "right",
+  		  "label": "Right"
+  		}
+  	   ],
+  		  "default": "left"
+ 	  }
+     ]
+    } 
+   ],
+	"presets": [
+    {
+      "category": "Image",
+      "name": "Product Packaging Details"
+    }
+   ]
+  }
+{% endschema %}
+
+<style>
+  .product-packaging-details {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+/*     margin: 20% auto; */
+    z-index: 0;
+  }
+  .product-packaging-details .image_cus_text h3 {
+    text-transform: uppercase;
+    font-size: 25px;
+}
+  .image_cus_text {
+    padding: 10px 0;
+}
+  .featured-link--section {
+    width: 100%;
+    box-sizing: border-box;
+/*     float: left; */
+    min-height: 100px;    
+    display: flex;   
+    flex-wrap: wrap;
+}
+  .featured-link--half {
+    box-sizing: border-box;
+/*     float: left; */
+    width: 48%;
+    position: relative;
+    text-align: center;
+    display: table;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    background-color: #fff;
+}
+  .featured-link--half .info {
+    display: inline-block;
+    width: 90%;
+/*     margin: 0 auto; */
+/*     padding: 20px; */
+}
+ .featured-text-1 .info {
+  margin: 0 auto 0 0;
+}
+ .featured-text-2 .info {
+  margin: 0 0 0 auto;
+}
+  .featured-link--half .featured-link--wrap {
+    width: 100%;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+}
+.featured-link--half img {
+    display: block;
+    margin: 0 auto;
+/*     width: 100%; */
+    max-width: 100%;
+    max-height: 100%;
+}
+.featured-link--half .info .description_cstm p {
+    font-size: .9em; 
+    /* color: gray; */
+/*     letter-spacing: 1px; */
+    margin: 0 0 20px;
+    font-style: normal;
+/*     line-height: 1.6em; */
+    text-align: justify;
+}
+  
+  a.action_button {
+    background: #17302e;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all .2s linear;
+    cursor: pointer;
+}
+  a.action_button:hover {
+    background: #60d2e1;
+    border: 1px solid #60d2e1;
+  }
+  @media(max-width: 749px) {
+  .featured-link--half {
+    width: 100%;
+   }
+    section.featured-link--section.layout-left {
+    flex-direction: column-reverse;
+        margin-bottom: 20px;  
+}
+    .featured-link--half .info{
+    width:100%;
+    }
+    .featured-link--section {
+    width: 95%;
+    margin: 0 auto;
+    }
+
+  }
+</style>

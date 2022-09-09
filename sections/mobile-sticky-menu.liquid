@@ -1,0 +1,127 @@
+<!----sections/mobile-sticky-menu.liquid---->
+
+<style>
+  .mobile-sticky-menu{
+    position: fixed; 
+    bottom: 0; 
+    left: 0;
+    right: 0;
+    background-color:#60d2e1;
+    color: white;
+    z-index: 9999;
+/*     padding: 10px 0px; */
+    display: flex;   
+  }
+  .mobile-sticky-menu> div{
+    flex: 1;
+    text-align: center;
+  }
+  .mb-hm-menu-text{
+   margin-top:-20px; 
+  }
+  .mob-footer-menus a svg{
+    width: 20px;
+    color: #fff;
+  }
+  .mb-menu-icon {
+    padding: 3px 10px 0;
+}
+  /*------menu icon css starts----*/
+   .mobile-sticky-menu .icon {
+    color: white;
+  }
+/*   .mb-category .hamburger__lines span {
+    height: 2px;
+    width: 16px;
+    background: white;
+    transition: .25s ease-in-out;
+    border-radius: 3px;
+}
+  .mb-category .hamburger__lines {
+    display: inline-block;
+    margin-left: 45%;
+}
+  .mb-category .hamburger__lines span:nth-child(1) {
+    top: 30%;
+}
+  .mb-category .hamburger__lines span:nth-child(2) {
+    top: 42%;
+}
+  .mb-category .hamburger__lines span:nth-child(3) {
+    top: 54%;
+}  */
+ /*------menu icon css ends----*/
+  
+  @media(min-width: 768px){
+    .mobile-sticky-menu{
+    display: none;
+    }
+  }
+</style>
+
+<section class="mobile-sticky-menu">
+  <div class="mb-category">
+   <div class="header__mobile__button">
+        <button class="header__mobile__hamburger{% if icon_family_text == 'text' %} navlink navlink--toplevel{% endif %}{% if settings.type_nav_caps %} caps{% endif %}"
+          data-drawer-toggle="hamburger"
+          aria-label="{{ 'general.accessibility.show_menu' | t }}"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="header-menu">
+
+          {%- if icon_family_text == 'text' -%}
+            <small class="navtext">{{ 'layout.header.menu' | t }}</small>
+          {%- else -%}
+            <div class="hamburger__lines">
+              <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-hamburger" viewBox="0 0 20 20">
+          <path fill="#444" d="M17.543 6.2H2.1a1.032 1.032 0 01-1.029-1.029c0-.566.463-1.029 1.029-1.029h15.443c.566 0 1.029.463 1.029 1.029 0 .566-.463 1.029-1.029 1.029zm0 4.829H2.1A1.032 1.032 0 011.071 10c0-.566.463-1.029 1.029-1.029h15.443c.566 0 1.029.463 1.029 1.029 0 .566-.463 1.029-1.029 1.029zm0 4.828H2.1a1.032 1.032 0 01-1.029-1.029c0-.566.463-1.029 1.029-1.029h15.443c.566 0 1.029.463 1.029 1.029 0 .566-.463 1.029-1.029 1.029z"/>
+        </svg>
+            </div>
+          {%- endif -%}
+        </button>
+      </div>
+    <div class="mb-hm-menu-text">menu</div>
+  </div>
+  <div class="mb-search">
+    <div class="mb-menu-icon">
+      <div class="mobile-search-icon header__mobile__button{% if settings.type_nav_caps %} caps{% endif %}">
+          <a href="javascript:void(0)" class="navlink mobile_sticky-search" data-popdown-toggle="search-popdown" data-focus-element title="{{ 'general.search.submit' | t }}">
+            {%- render 'icon-modern-search' -%}
+            <span class="{% if icon_family_text == 'text' %}navtext{% else %}visually-hidden{% endif %}">{{ 'layout.header.search' | t }}</span>
+          </a>
+        </div>
+    </div>
+    <div class="mb-hm-text">search</div>
+  </div>
+  
+  <div class="mb-cart">
+    <div class="">
+        <a class="" href="javascript:void(0)" {% if settings.enable_cart_dropdown and template.name != 'cart' %} data-cart-toggle data-focus-element {% endif %}>
+          <div class="mb-menu-icon cart__icon__content{% if icon_family_text == 'text' %} cart__icon__content--text{% elsif icon_family_text == 'modern' %} cart__icon__content--modern{% endif %}">
+            {%- render 'icon-modern-cart' -%}
+            <span class="{% if icon_family_text == 'text' %}navtext{% else %}visually-hidden{% endif %}">{{ 'layout.header.cart' | t }}</span>
+            {{ cart_status }}
+          </div>
+        </a>
+      </div>
+    <div class="mb-hm-text">cart</div>
+  </div>
+  <div class="mb-account">
+    <a class="" href="{{ routes.account_url }}">
+      <div class="mb-hm-icon mb-menu-icon">
+        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-modern-account" viewBox="0 0 30 30"><path d="M15 1c7.732 0 14 6.268 14 14s-6.268 14-14 14S1 22.732 1 15 7.268 1 15 1zm0 20a12.94 12.94 0 00-8.113 2.841A11.953 11.953 0 0015 27c3.128 0 5.977-1.197 8.113-3.158A12.94 12.94 0 0015 21zm0-18C8.373 3 3 8.373 3 15c0 2.778.944 5.336 2.529 7.37A14.93 14.93 0 0115 19c3.507 0 6.826 1.21 9.472 3.368A11.949 11.949 0 0027 15c0-6.627-5.373-12-12-12zm.05 2a6.25 6.25 0 110 12.5 6.25 6.25 0 010-12.5zm0 2a4.25 4.25 0 100 8.5 4.25 4.25 0 000-8.5z"/>
+        </svg>
+      </div>
+    </a>
+    <div class="mb-hm-text">account</div>
+  </div>  
+</section>
+
+
+<!-- for search tab on mobile on sticky property -->
+<script>
+$('.mb-search').click(function(){
+   
+    $('#search-popdown').addClass("is-visible");
+  });
+</script>

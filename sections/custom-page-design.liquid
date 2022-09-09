@@ -1,0 +1,133 @@
+<!-----sections/custom-page-design.liquid----->
+
+<a name="pagecontent" id="pagecontent"  target="_self"></a>
+<div class="custom-container-fluid text-center help-banner mb-md-4 p-md-4 bg-info">
+  <span>HELP &amp; ADVICE</span>
+  <h2 class="serif d-none d-md-block">What can we help you with?</h2>
+    <p class="small mb-0 pt-3">Use the search facility above and if you can't find the answer to what you're looking for, feel free to contact us directly<br><a href="mailto:help@myjewelworld.co.uk" class="text-primary">help@myjewelworld.co.uk</a></p>
+</div>
+<div class="row helpitem  demdt">  
+  <div class="text-center mb-4 helpintro">
+    <h1 class="garamond">{{ page.title }}</h1>
+  </div>
+</div>
+{% unless page.handle == 'refund-policy' %}
+<div class="sixteen columns page clearfix">
+  <div class="feature_divider"></div>
+  <div>
+    {% include 'page-multi-column', content: page.content %}
+  </div>
+</div>
+{% endunless %}
+
+{% schema %}
+{
+  "name": "Custom Page Design",
+  "settings": [],
+  "presets": [
+   {
+   	 "name": "Custom Page Design",
+     "category": "Page"
+   }
+  ]
+}
+{% endschema %}
+
+<style>
+<!-----FAQ's page css starts---->
+
+h2.serif.d-none.d-md-block {
+    font-style: normal;
+    text-transform: uppercase;
+    color: #070707 !important;
+    display: block;
+    letter-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 22px;
+    margin-bottom: 0.75em;
+    line-height: 1.5;
+}
+.text-primary {color: #03a196;}
+p.small.mb-0.pt-3 {
+    font-size: 18px;
+}
+h2.serif.d-none.d-md-block {
+    font-weight: normal;
+}
+.faq-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+.garamond {
+    font-style: normal;
+    text-transform: uppercase;
+    color: #737373;
+    display: block;
+    letter-spacing: 1px;
+    font-size: 20px;
+    line-height: 1.25;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    clear: both;
+  	font-weight: normal;
+}
+.diamond {
+    width: 100%;
+    height: 60px;
+    background-image: url(//cdn.shopify.com/s/files/1/0103/7913/3024/t/44/assets/Logo2.svg?v=1420393…);
+    background-repeat: no-repeat;
+    background-position: center 29px;
+    background-size: 100% 60px;
+    padding-top: 0;
+}
+.row.helpitem {
+    margin-bottom: 20px;
+    color: #737373;
+}
+  .custom-container-fluid {
+    background-color: #f1f1f1!important;
+    padding: 1.5rem!important;
+/*     margin-top: 30px; */
+  }
+  .custom-container-fluid a:hover {
+    color: #60d2e1;
+  }  
+ .sixteen.columns {
+    margin: 0px auto;
+    max-width: 1180px;
+    padding: 0 30px;
+    color: #737373;
+    line-height: 1.6em;
+}
+.feature_divider {
+    width: 100%;
+    margin-bottom: 15px;
+    display: block;
+    border: solid 1px;
+    height: 1px;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 0;
+    border-color: #aaaaaa;
+}
+  div#shopify-section-custom-page-design {
+/*     position: relative; */
+/*     z-index: 99999; */
+/*     margin-top: -5px; */
+}
+  .homepage-header-bottom-border .header-bottom-border{
+  border-color:#fff;
+  }
+  
+  @media(min-width:950px){
+  .header__backfill {
+    height: 161px !important;
+}
+    .header__wrapper.js__header__stuck.js__header__stuck__backdrop + .header__backfill{
+    height:182px !important;
+    }
+  }
+<!-----FAQ's page css ends----> 
+</style>

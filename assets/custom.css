@@ -1,0 +1,749 @@
+.template-page .index-page {
+    display: none;
+}
+/*-----------homepage search box css starts---------*/
+.desktop-search-icon {
+    display: none;
+}
+.search_container.sticky-search-class {
+    right: 6%;
+    position: absolute;
+}
+input.globo-search-activator {
+    border-color: #000;
+    min-height: 32px;
+    height: 32px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    width: 95%;
+    margin-left: 10%;
+}
+.search_container.sticky-search-class .search-submit {
+    top: 13px;
+    cursor: pointer;
+    right: -6%;
+}
+@media only screen and (min-width: 768px) and (max-width: 1150px) {
+   .menu li, #header span.menu_title, .menu a span {
+      padding-left: 2px;
+      padding-right: 2px;
+   }
+   .navlink--toplevel {
+      padding: 15px 5px;
+   }
+   .navtext {
+      font-size: 13px !important;
+   }
+  input.globo-search-activator {
+      width: 80%;
+      margin-left: 39%;
+      padding: 8px;
+  }
+  .search_container.sticky-search-class .search-submit {
+      right: -20%;
+  }
+}
+/*-----------homepage search box css ends---------*/
+
+.cart-dropdown .avis-discount {
+    padding: 0 15px;
+}
+/*-------------product page reviews css-------*/
+@media only screen and (max-width: 749px) {
+ .trustpilot-widget iframe:nth-child(2) {
+    left: -35%!important;
+    min-width: 250px!important;
+    top: 15px !important;
+ }
+}
+@media only screen and (min-width: 750px) {
+ .trustpilot-widget iframe:nth-child(2) {
+    left: -65% !important;
+    min-width: 300px !important;
+    top: 15px !important;
+ }
+}
+div#trustpilot-widget-trustbox-0 {
+/*     height: 76px; */
+      height: 0px;
+}
+div#trustpilot-widget-trustbox-0 iframe:nth-child(1) {
+    height: auto!important;
+}
+/*------product page review count align css starts----------*/
+  @media only screen and (max-width: 836px) {
+ .template-product div#trustpilot-widget-trustbox-0-wrapper {
+    margin-left: 50% !important;
+ }
+} 
+ @media only screen and (max-width: 1024px) and (min-width: 837px) {
+ .template-product div#trustpilot-widget-trustbox-0-wrapper {
+    margin-left: 60% !important; 
+ } 
+}  
+  @media only screen and (min-width: 1200px) {
+ .template-product div#trustpilot-widget-trustbox-0-wrapper {
+    margin-left: 70% !important;
+ }
+} 
+/*------product page review count align css ends----------*/
+div#trustpilot-widget-trustbox-1 {
+    margin-bottom: 30px;
+}
+.related__products span.new-price small, .related__products span.old-price {
+    display: none;
+}
+.index-products .price.sale span.old-price {
+    display: none;
+}
+.index-tab-collections span.old-price, .index-tab-collections span.new-price small {
+    display: none;
+}
+<!-----cart drawer recommmended products css starts----->
+.cart-drawer-recommended div#trustpilot-widget-trustbox-0-wrapper {
+    display: none;
+}
+.cart-drawer-recommended .product-item.product-item--borderless {
+    flex:50%;
+    margin: 0 auto;
+}
+<!-----cart drawer recommmended products css ends----->
+
+nav.collection__nav.collection__nav--sort.collection__nav--filter {
+    display: none;
+}
+div#filter-groups {
+    display: none;
+}
+.search-page.collection .search-outer {
+    display: none;
+}
+.search__results__products__list .product-item__bg {
+    position: absolute;
+}
+
+@media only screen and (min-width: 768px) {
+ .collection .hero__description.rte {
+    margin: 10px auto;
+    width: 55%;
+ }
+  .product__slides .flickity-slider>*{
+/*   width:75%; */
+  }
+}
+.single-atc-button.product__submit {
+    width: 100%;
+}
+.pswp__button--arrow--left, .pswp__button--arrow--right {
+    background: unset !important;
+    border: unset !important;
+}
+.pswp__container img.pswp__img {
+    max-height: unset !important;
+}
+.index-collections-list .grid__heading-holder>*, .grid__heading-holder, .grid__heading {
+    padding: unset !important;
+}
+.index-collections-list .grid__heading-holder.text-center {
+    margin: 14px 0 20px 0;
+    color: black;
+}
+.index-collections-list .grid__description.text-center {
+    margin-bottom: 10px;
+}
+.index-collections-list .grid__description.text-center p:nth-child(1) {
+    margin: unset;
+    padding-top: 40px;
+}
+.index-collections-list div#trustpilot-widget-trustbox-0-wrapper {
+    padding-bottom: 20px !important;
+}
+/*---------------------------*/
+.set-engraving-position .product__submit {
+    margin-top: 20px;
+}
+.hide-product-type .collection__filters .collection__sidebar__group:nth-child(1) {
+   display: none; 
+}
+/*---------App filter css--------------*/
+
+@media (min-width: 768px) {
+ .spf-has-filter.spf-layout-theme.spf-layout-theme-filter-style.gf-left #gf-tree
+  {
+    padding: 15px 25px 30px !important;
+    height: unset !important;
+  }
+ }
+.collection__products .gf-block-title h3 {
+    text-transform: uppercase !important;
+}
+.gf-option-block ul li a {
+    line-height: 1.2;
+    font-size: 14px !important;
+}
+
+/*-------sku, trustpilot & friday sale css starts------*/
+.collection .friday-sale-text {
+    width: max-content;
+    top: 15px;
+    margin: 0 auto 15px;
+}
+ .friday-sale-text {
+    position: relative; 
+    padding: 5px 10px;
+    background-color: #0c0c0c;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 1px;
+    max-width: max-content;
+} 
+.friday-sale-text-desk {
+    position:absolute; 
+    padding: 5px 10px;
+    background-color: #0c0c0c;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 1px;
+    max-width: max-content;
+}
+@media (max-width: 749px) {
+/*  .friday-sale-text {
+    margin: 10px auto 0px;
+    
+ } */
+  .friday-sale-text-desk {
+    top: 15px;
+    z-index: 99;
+    Display:none;
+ }
+}
+@media only screen and (min-width: 750px) {
+ .friday-sale-text {
+    top: 15px;
+    z-index: 99;
+    Display:none;
+ }
+  .friday-sale-text-desk {
+    z-index: 99;
+    Display:block;
+ }  
+}
+/* .sku-reviews {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+} */
+/* .sku {
+    font-size: 15px;
+    letter-spacing: .5px; 
+    width: 45%;
+} */
+.trustpilot-widget.rev-start {
+    width: 60%;  
+    margin: 0 auto;
+}
+.sale-text-above-desc {
+    display: flex;
+    align-items: flex-start;
+    color: #dc3545 !important;
+}
+.icon-wrapper-pro .tooltip-icon img {
+    width: 16px;
+    margin-left: 15px;
+    margin-bottom: unset;
+}
+.sale-popup-description{
+    display: none;
+    position: absolute;
+    width: 300px;
+    right: 33%;
+    bottom: 15%;
+    padding: 5px;
+    border-radius: 4px;
+    background: #fff;
+    color: black;
+    z-index: 9999999;
+    -webkit-box-shadow: 0px 0px 7px 2px rgb(0 0 0 / 75%);    
+}
+@media screen and (max-width: 749px) {
+  .sale-popup-description {
+    right: 10%;
+    bottom: 65%;
+  }
+}
+.sale-desc-icon:hover .sale-popup-description {
+    display: block;
+}
+/*-------sku, trustpilot & friday sale css ends------*/
+
+/*------product specifiaction css starts-----*/
+.mob-table table {
+    width: 500px !important;
+    height: auto !important;
+}
+@media screen and (max-width: 749px) {
+  .mob-table table {
+    width: 100% !important;
+  }
+ }
+ 
+.mob-table table p {
+    padding-top: 8px !important;
+    margin: 0 !important;
+}
+.accordion__body .description h5 {
+    display: none;
+  }
+  .accordion__body .description table {
+    margin-top: -1.5em !important;
+    margin-bottom: 1em;
+  }
+  @media screen and (max-width: 767px) {
+  .accordion__body .description .desk-specifiaction {
+    display: none;    
+  }
+   .accordion__body .description .mob-table {
+    display: block;
+  }
+ }
+  @media screen and (min-width: 768px) {
+   .accordion__body .description .mob-table {
+    display: none;
+   }
+   .accordion__body .description .desk-specifiaction {
+    display: block;    
+   }
+  }
+/*------product specifiaction css ends-----*/
+
+/*------header border css starts-----*/
+.homepage-header-bottom-border .header-bottom-border {
+    border-bottom: 2px solid rgb(128 128 128 / 41%); 
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+.header-bottom-border.header__desktop__lower.remove-border {
+    border-color: white;
+}
+
+section#faq--template--14192169418848__1654072592a0617057 h2.section-faq__title.accordion__title {
+    margin-top: 20px;
+}
+@media screen and (min-width: 750px) {
+.header__wrapper.js__header__stuck.js__header__stuck__backdrop + .header__backfill{
+    height: 185px !important;
+   } 
+}
+iframe#tidio-chat-iframe {
+    bottom: 40px !important;
+}
+.template-index .awesome-iframe .onlyBubbleLarge #button {
+    width: 80px !important;
+    height: 125px !important;
+}
+.product-reviews h3.garamond {
+    text-transform: uppercase;
+    font-size: 20px;
+}
+.product-reviews h5.pb-4 {
+    text-transform: uppercase;
+    font-size: 16px;
+}
+/*-----Enrgraving Text on Product Page CSS Starts-----*/
+.form__wrapper div#infiniteoptions-container {
+    display: none;
+}
+.form__wrapper .select.select_cstm_box {
+    display: none;
+}
+.form__wrapper .purchase.clearfix.purchase_cstm_btn {
+    display: none;
+}
+#initial-rings-hide-avpoptions-container div#avpoptions-container {
+    display: none !important;
+}
+#avpoptions-container input[type="text"], #avp-productoption-total-add {
+/*   	width: 50% !important; */
+  	padding: 10px !important;
+}
+#avpoptions-container .ap-label-tooltip label {
+  	text-transform: uppercase;
+  	padding-left: 0.5em;
+    font-size: calc(var(--font-2) * var(---font-adjust-body));
+}
+#avpoptions-container .avp-productoptioncheckwrapper > input {
+  	margin-left: 0 !important;
+}
+#avpoptions-container .avp-productoptioncheckwrapper {
+  	padding-left: 0 !important;
+}
+#avpoptions-container div[role="group"] span > label {
+  	margin-right: 20% !important;
+    position: unset;
+}
+
+#avpoptions-container .avp-productoptioncheckwrapper > input {
+    top: -15px;
+    left: 35px;
+    width: 98%;
+    height: 45px;
+}
+#avpoptions-container .avp-productoptioncheckwrapper > input {
+    margin-top: 1.4rem !important;
+    margin-left: -2.30rem !important;
+}
+#avpoptions-container .ap-label-tooltip {
+    background-color: #60d2e1;
+    color: white;
+/*     padding-bottom: 10px; */
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    align-items: flex-start;
+    display: flex;
+    justify-content: center;
+    cursor:pointer;
+}
+ #avpoptions-container .ap-tooltip img {
+    margin-bottom: unset;
+ }
+#avpoptions-container .ap-tooltip-inner {
+/*     display: none;   */
+    left: -255px!important;
+    bottom: 40px!important;
+    font-size: 12px !important;
+    padding: 7px 5px !important;
+    left: -245px !important;
+}
+#avp-productoption-total-add, #avpoptions-container input[type="text"] {
+    border: 1px solid #e5e5e5 !important;  
+}
+.avp-productoptioncheckwrapper input.avp-productoptiontextcolor.avp-productoptionbackground {
+    opacity: 0;
+}
+#avpoptions-container {
+    width: 100%!important;
+}
+.flex-class.n_fixed_min_width{
+  width:100% !important;
+}
+#avpoptions-container > div {
+    margin-bottom: 0.5rem!important;
+  	width: 100%;
+    text-align: center;
+}
+#avpoptions-container > div > label {
+    margin-bottom: -0.4rem !important;
+}
+#avpoptions-container {
+    padding: 10px 0 !important;
+    margin-bottom: 0 !important;
+    position: relative;
+}
+div#avp-productoption-total-add {
+  opacity: 0;
+  height: 0;
+  padding: 0 !important;
+}
+#avpoptions-container div:nth-child(1) {
+  	margin-bottom: 0rem!important;
+}
+#avpoptions-container .ap-helptext {
+    padding-bottom: 0rem !important;
+}
+#avpoptions-container span label:nth-child(2) {
+  	display: none;
+}
+label.avp-productoptioncheckwrapper span {
+    display: none;
+}
+
+label.avp-productoptioncheckwrapper:nth-child(2){
+display:none !important;
+}
+label.avp-productoptioncheckwrapper:nth-child(1){
+display:flex !important;
+}
+
+/*-----Engraving Text on Product Page CSS ends-------*/
+
+/* .product__thumbs--square .thumbs-holder .thumb:nth-child(2),
+.product__thumbs--square .thumbs-holder .thumb:nth-child(4){
+  display: none;
+} */
+.add-thumb .product__thumbs--square .thumbs-holder .thumb:nth-child(2) {
+  display: inline-block;
+}
+/*-----sticky bottom ring size css starts-----*/
+.cart-bar__form .select-popout__toggle {
+  width: 100%;
+  height: 45px;
+  padding: 10px 20px;
+}
+.cart-bar__form .radio__legend {
+  display: none;
+}
+.cart-bar__form .select-popout__list {
+    position: absolute;
+    bottom: 100%;
+    overflow: auto;
+    visibility: visible; 
+    top: unset !important;
+}
+
+/*-----sticky bottom ring size css ends-----*/
+[data-value="Please Select Ring Size"] {
+    pointer-events: none;
+}
+
+.footer__payment{
+  margin: 0 !important;
+  justify-content: center;
+}
+.visible_mobile-logo{
+  display: none;
+}
+/*-----Mobile view header css starts-----*/
+@media screen and (max-width: 767px) {
+  .visible_desktop-logo, .header_Contact_sec1{
+  display: none;
+}
+  .visible_mobile-logo{
+  display: block;
+}
+  .mobile-account-icon  a.navlink {display: none;}
+  a.navlink.navlink--cart {display: none;}
+  .header__logo {display: block;}
+  .header__mobile__right {
+    position: absolute;
+    right: 0px;
+    padding: 30px 20px;
+  }
+  #shopify-section-header .header__mobile{
+    display: flex;
+    align-items: center;
+  }
+  .header__mobile .header__mobile__left{
+    width: 20%;
+    display: none;
+  }
+  .header__mobile .header__logo{
+    width: 100%;
+    margin: auto;
+  }
+  .header__mobile .header__mobile__right{
+    width: 20%;
+    display: none;
+  }
+  .header__desktop{
+    position: relative;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .align--bottom-right{
+    justify-content: center;
+  }
+  .hero__content--transparent .hero__content{
+   margin: 0 0 40px !important;
+  }
+  .gift-section-heading, .main-heading{
+        font-size: 42px !important;
+  }
+  .gift-section-description{
+    padding: 0 15px;
+  }
+  .text-promo-inner .standard__cta, .text-promo-inner .standard__heading, .text-promo-inner .standard__rte {
+    margin: 0;
+  }
+  .text-promo{
+    padding: 0px !important;
+  }
+  .text-promo-inner .standard__heading{
+    margin-top: 20px !important;
+  }
+  .text-promo-inner--border{
+    margin-bottom: 15px;
+  }
+  .header__mobile{
+    min-height: 40px;
+  }
+  .header__logo__link{
+    width: 180px !important;
+  }
+  .header__mobile__button{
+    justify-content: center;
+  }
+  .product-grid--mobile-slider:not(.flickity-slider--default) .product-item{
+    width: calc(100% - 40%);
+  }
+
+   .header__logo__link::before {
+    padding-bottom: 20.8% !important;
+  } 
+}
+ @media screen and (max-width: 479px) and (min-width: 375px) {
+  .split-hero__image.fade-in.lazyloaded {
+    margin-top: -3%;
+   }
+}
+@media screen and (max-width: 375px) {
+  .split-hero__image.fade-in.lazyloaded {
+    margin-top: -8%;
+  }
+}
+/*-----Mobile view header css ends-----*/
+
+.grid-container {
+   max-width: 1200px;
+   margin: auto;
+   width: 100%
+}
+.section-video .hero__content--transparent .hero__content{
+  margin: 0 !important;
+}
+
+/*-----compare price remove css starts----*/
+.product-link span.old-price {
+    display: none; 
+}
+.product-link .new-price small {
+    display: none;
+}
+/*-----compare price remove css ends----*/
+
+/*--------collection page sale icon css starts-----*/
+.banner_holder {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.sale_banner {
+    background: #60d2e1;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    text-align: center;
+    color: #fff;
+    letter-spacing: .5px;
+    padding: 12px 4px;
+    font-size: 10px;
+    clip-path: polygon(100% 0,100% 100%,50% 80%,0 100%,0 0);
+}
+/*--------collection page sale icon css ends-----*/
+
+/*---------desktop menu css starts----*/
+
+/*   .header__grandparent__links.rings .dropdown__family:nth-child(1),
+  .header__grandparent__links.rings .dropdown__family:nth-child(3),
+  .header__grandparent__links.rings .dropdown__family:nth-child(4),
+  .header__grandparent__links.rings .dropdown__family:nth-child(7),
+  .header__grandparent__links.rings .dropdown__family:nth-child(10),
+  .header__grandparent__links.rings .dropdown__family:nth-child(11),
+  .header__grandparent__links.earrings .dropdown__family:nth-child(3),
+  .header__grandparent__links.bracelets .dropdown__family:nth-child(3),
+  .header__grandparent__links.bangles .dropdown__family:nth-child(3),
+  .header__grandparent__links.necklaces .dropdown__family:nth-child(3) {
+    display: none;
+  } */
+/*   .header__grandparent__links.rings .dropdown__family .navlink.navlink--grandchild:nth-child(8) span.navtext
+{
+    text-transform: uppercase;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    padding-top: 15px;
+} */
+  .header__grandparent__links.rings .dropdown__family:nth-child(3) .navlink.navlink--child span,
+  .header__grandparent__links.earrings .dropdown__family:nth-child(2) .navlink.navlink--child span,
+  .header__grandparent__links.bracelets .dropdown__family:nth-child(2) .navlink.navlink--child span,
+  .header__grandparent__links.bangles .dropdown__family:nth-child(2) .navlink.navlink--child span,
+  .header__grandparent__links.necklaces .dropdown__family:nth-child(2) .navlink.navlink--child span {
+    font-size: 0!important;
+    margin: 10px 0;
+}
+.dropdown__family .item.heading_nav a{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.dropdown__family .item.heading_nav span{
+  text-transform: uppercase;
+} 
+.navlink--grandchild .navtext {
+    color: #737373;
+}
+.item.heading_nav a span {
+  color: black;
+}
+.header__grandparent__links .dropdown__family .item .navlink.navlink--grandchild {
+     line-height: 16px; 
+    font-size: .9rem !important;
+    color: #737373 !important;
+    font-weight: 600;
+}
+.grandparent .header__grandparent__links {
+    column-count: 5;
+    -webkit-column-gap: 0;
+    -moz-column-gap: 0;
+    column-gap: 0;
+    margin: 0 70px; 
+}
+.grandparent.kids-6 .header__grandparent__links {
+    grid-template-columns: repeat(5,minmax(0,1fr)) !important;
+}
+/* @media only screen and (max-width: 768px) {
+  .sliderule__wrapper.rings .mobile__menu__dropdown.is-visible_menu .sliderow__links .sliderule__wrapper:nth-child(2),
+  .sliderule__wrapper.rings .mobile__menu__dropdown.is-visible_menu .sliderow__links .sliderule__wrapper:nth-child(6),
+  .sliderule__wrapper.rings .mobile__menu__dropdown.is-visible_menu .sliderow__links .sliderule__wrapper:nth-child(7),
+  .sliderule__wrapper.rings .mobile__menu__dropdown.is-visible_menu .sliderow__links .sliderule__wrapper:nth-child(9),
+  .sliderule__wrapper.earrings .mobile__menu__dropdown.is-visible_menu .sliderow__links .sliderule__wrapper:nth-child(1),
+  .sliderule__wrapper.earrings .mobile__menu__dropdown.is-visible_menu .sliderow__links .sliderule__wrapper:nth-child(2),
+  .sliderule__wrapper.bracelets .mobile__menu__dropdown.is-visible_menu .sliderow__links .sliderule__wrapper:nth-child(1),
+  .sliderule__wrapper.bracelets .mobile__menu__dropdown.is-visible_menu .sliderow__links .sliderule__wrapper:nth-child(2),
+  .sliderule__wrapper.bangles .mobile__menu__dropdown.is-visible_menu .sliderow__links .sliderule__wrapper:nth-child(1),
+  .sliderule__wrapper.bangles .mobile__menu__dropdown.is-visible_menu .sliderow__links .sliderule__wrapper:nth-child(2),
+  .sliderule__wrapper.necklaces .mobile__menu__dropdown.is-visible_menu .sliderow__links .sliderule__wrapper:nth-child(1),
+  .sliderule__wrapper.necklaces .mobile__menu__dropdown.is-visible_menu .sliderow__links .sliderule__wrapper:nth-child(2) {
+    display: none;
+  }
+  .mobile__menu__dropdown.sliderule__panel.engagement-rings.is-visible_menu .sliderow__links .sliderule__wrapper,
+  .mobile__menu__dropdown.sliderule__panel.eternity-rings.is-visible_menu .sliderow__links .sliderule__wrapper,
+  .mobile__menu__dropdown.sliderule__panel.ring-styles.is-visible_menu .sliderow__links .sliderule__wrapper,
+  .mobile__menu__dropdown.sliderule__panel.gem-stones.is-visible_menu .sliderow__links .sliderule__wrapper,
+  .mobile__menu__dropdown.sliderule__panel.best-sellers.is-visible_menu .sliderow__links .sliderule__wrapper,
+  .mobile__menu__dropdown.sliderule__panel.metal.is-visible_menu .sliderow__links .sliderule__wrapper,
+  .mobile__menu__dropdown.sliderule__panel.earring-styles.is-visible_menu .sliderow__links .sliderule__wrapper,
+  .mobile__menu__dropdown.sliderule__panel.gem-stones.is-visible_menu .sliderow__links .sliderule__wrapper,
+  .mobile__menu__dropdown.sliderule__panel.best-sellers.is-visible_menu .sliderow__links .sliderule__wrapper,
+  .mobile__menu__dropdown.sliderule__panel.metal.is-visible_menu .sliderow__links .sliderule__wrapper,
+  .mobile__menu__dropdown.sliderule__panel.bracelet-styles.is-visible_menu .sliderow__links .sliderule__wrapper,
+  .mobile__menu__dropdown.sliderule__panel.gem-stones.is-visible_menu .sliderow__links .sliderule__wrapper,
+  .mobile__menu__dropdown.sliderule__panel.best-sellers.is-visible_menu .sliderow__links .sliderule__wrapper,
+  .mobile__menu__dropdown.sliderule__panel.metal.is-visible_menu .sliderow__links .sliderule__wrapper,
+  .mobile__menu__dropdown.sliderule__panel.bangle-styles.is-visible_menu .sliderow__links .sliderule__wrapper,
+  .mobile__menu__dropdown.sliderule__panel.gem-stones.is-visible_menu .sliderow__links .sliderule__wrapper,
+  .mobile__menu__dropdown.sliderule__panel.best-sellers.is-visible_menu .sliderow__links .sliderule__wrapper,
+  .mobile__menu__dropdown.sliderule__panel.metal.is-visible_menu .sliderow__links .sliderule__wrapper,
+  .mobile__menu__dropdown.sliderule__panel.necklace-styles.is-visible_menu .sliderow__links .sliderule__wrapper,
+  .mobile__menu__dropdown.sliderule__panel.gem-stones.is-visible_menu .sliderow__links .sliderule__wrapper,
+  .mobile__menu__dropdown.sliderule__panel.best-sellers.is-visible_menu .sliderow__links .sliderule__wrapper,
+  .mobile__menu__dropdown.sliderule__panel.metal.is-visible_menu .sliderow__links .sliderule__wrapper
+  {
+    display: block !important;
+  }
+}  */
+/*---------desktop menu css ends----*/
+.back-to-help{
+  margin-bottom:30px;
+}
+.index-contact.margin--small {
+    padding-bottom: 0px;
+}
+#contact-us .caro-bg.container {
+    margin-top: 10px;
+}
+@media (max-width: 750px) {
+ #contact-us .logos__wrapper--tall {
+    margin-top: 0px;
+ }
+}

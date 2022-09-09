@@ -1,0 +1,85 @@
+<div class="refund-policy">
+  {% section 'custom-page-design' %}
+</div>
+<div class="custom_refund_container">
+  {% section 'return-policy' %}
+</div>
+<div>
+  {% section 'section-logo-list' %}
+</div>
+
+<style>
+  .container-fluid {
+  	background-color: #f1f1f1!important;
+    padding: 1.5rem!important;
+    margin-top: 30px;
+  }
+  #shopify-section-return-policy .sub_heading_rp p{
+    text-align: center;
+    margin: 0 auto 30px;
+    max-width: 650px;
+    margin-bottom: 0!important;
+}
+ @media only screen and (min-width: 750px) {    
+  .custom_refund_container{
+    max-width: 65%;
+    margin: auto;
+    float: none;
+    display: block;
+    padding: 0 15px;   
+  }
+ }
+  .imp {
+    padding: 30px;
+  }
+  .accordion {
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    padding: 20px;
+    width: 100%;
+    text-align: left;
+    text-transform: uppercase;
+    border: none;
+    border-top: 1px solid #000;
+    outline: none;
+    transition: .4s;
+  }
+  .panel {
+    padding: 0 18px;
+    background-color: #fff;
+    display: none;
+  }
+  #shopify-section-return-policy .imp p {
+    color: #000;
+    font-size: 16px;
+  }
+  .icon-down-arrow:before {
+    content: "+";
+}
+  #shopify-section-return-policy .imp button.accordion:hover {
+    color: #60d2e1;
+    background-color: transparent;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid gray;
+  }
+  #shopify-section-return-policy>button:hover {
+    background: #60d2e1;
+    border: 1px solid #60d2e1;
+ }
+  .back-to-help{
+    border:1px solid black;
+    padding:10px 20px;
+/*     margin: 20px; */
+    text-transform: uppercase;
+  }
+  .btn_colors:hover{
+    background: #60d2e1;
+    border: 1px solid #60d2e1;    
+  }
+  .btn_colors:hover a{
+   color:#fff;
+  }
+</style>

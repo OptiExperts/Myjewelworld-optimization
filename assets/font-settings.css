@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "Neuzeit Office";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://fonts.shopifycdn.com/neuzeit_office/neuzeitoffice_n7.8e6644a6e9b2b400849c4ec07e56b061ab1e6754.woff2?h1=bXlqZXdlbHdvcmxkLmNvbQ&h2=bXlqZXdlbHdvcmxkLmNvLnVr&hmac=e5ef2cd7d414b636049c92f9584ff176a930ae91bfa357f897f1e18539b5cc58") format("woff2"),
+       url("https://fonts.shopifycdn.com/neuzeit_office/neuzeitoffice_n7.51d3e10318b790966930940575f96c0d8aeccd8c.woff?h1=bXlqZXdlbHdvcmxkLmNvbQ&h2=bXlqZXdlbHdvcmxkLmNvLnVr&hmac=341dd45a0fdb8f5e5fe59f098d3c5ba77b58397ca0bd92673b92dcd0ce465347") format("woff");
+}
+
+@font-face {
+  font-family: "Neuzeit Office";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://fonts.shopifycdn.com/neuzeit_office/neuzeitoffice_n4.ae7f155182babff68f1ef962040edcc74cbc0239.woff2?h1=bXlqZXdlbHdvcmxkLmNvbQ&h2=bXlqZXdlbHdvcmxkLmNvLnVr&hmac=7d71af7b8cfe6b8e5519c418661f0120130c8a35a2cddeb6f3efac8f287efeb0") format("woff2"),
+       url("https://fonts.shopifycdn.com/neuzeit_office/neuzeitoffice_n4.d928145105c25df05cd26a4f8c81aff1e65bd4fe.woff?h1=bXlqZXdlbHdvcmxkLmNvbQ&h2=bXlqZXdlbHdvcmxkLmNvLnVr&hmac=dfc642c0bc8a3428b14208722db668813b1a3a73ba610cb341677bf1fbdd0731") format("woff");
+}
+
+
+
+
+
+  @font-face {
+  font-family: "Neuzeit Office";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://fonts.shopifycdn.com/neuzeit_office/neuzeitoffice_n7.8e6644a6e9b2b400849c4ec07e56b061ab1e6754.woff2?h1=bXlqZXdlbHdvcmxkLmNvbQ&h2=bXlqZXdlbHdvcmxkLmNvLnVr&hmac=e5ef2cd7d414b636049c92f9584ff176a930ae91bfa357f897f1e18539b5cc58") format("woff2"),
+       url("https://fonts.shopifycdn.com/neuzeit_office/neuzeitoffice_n7.51d3e10318b790966930940575f96c0d8aeccd8c.woff?h1=bXlqZXdlbHdvcmxkLmNvbQ&h2=bXlqZXdlbHdvcmxkLmNvLnVr&hmac=341dd45a0fdb8f5e5fe59f098d3c5ba77b58397ca0bd92673b92dcd0ce465347") format("woff");
+}
+
+
+
+
+
+
+
+  @font-face {
+  font-family: "Neuzeit Office";
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: url("https://fonts.shopifycdn.com/neuzeit_office/neuzeitoffice_i4.afb55889f961ad5b9449a167e154918f37e53c3a.woff2?h1=bXlqZXdlbHdvcmxkLmNvbQ&h2=bXlqZXdlbHdvcmxkLmNvLnVr&hmac=6df00eca38d0371759432cf68c8f36dac97857fbce4ae2541fc4f9bcd56a7470") format("woff2"),
+       url("https://fonts.shopifycdn.com/neuzeit_office/neuzeitoffice_i4.d9a01c535eecef2c35837ad828a5c19a79f02837.woff?h1=bXlqZXdlbHdvcmxkLmNvbQ&h2=bXlqZXdlbHdvcmxkLmNvLnVr&hmac=e4c68927c45273df29e8eedf78d4e4b421bafa4c21915c410f1e048cccd37b3e") format("woff");
+}
+
+
+
+
+  @font-face {
+  font-family: "Neuzeit Office";
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+  src: url("https://fonts.shopifycdn.com/neuzeit_office/neuzeitoffice_i7.41c0879093ceb8f3032810dcea7595289abd832d.woff2?h1=bXlqZXdlbHdvcmxkLmNvbQ&h2=bXlqZXdlbHdvcmxkLmNvLnVr&hmac=3be7370b9428ee48ac9b276ea0f080c6726d6efed95bfab932123b9b111562e6") format("woff2"),
+       url("https://fonts.shopifycdn.com/neuzeit_office/neuzeitoffice_i7.68fd27cc1b60c69509a4c51d88872c23c3dabbbe.woff?h1=bXlqZXdlbHdvcmxkLmNvbQ&h2=bXlqZXdlbHdvcmxkLmNvLnVr&hmac=baa8e0eac21087f421e7caacaf742ba9a0124a983d2a6f627a6037d38cf680a9") format("woff");
+}
+

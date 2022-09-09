@@ -1,0 +1,294 @@
+<!-----sections/cus-faq.liquid----->
+
+{% if section.settings.enable_this_section %}
+<div class="container">
+
+    <div class="row faq">
+    {% for block in section.blocks %}
+    {% if block.type == 'text'  %}
+      <div class="faq-main" data-tab-index="tab-{{forloop.index}}">
+      <div class="a">
+    {% if block.settings.image_picker and block.settings.svg_img == blank  %}
+   <img src="{{block.settings.image_picker|img_url: 'large' }}">
+        {% else %}
+        <div class="faq-icon index-{{forloop.index}}"> {{ block.settings.svg_img }}</div>
+    {% endif %}
+      <h4>{{block.settings.title}}</h4>
+        <span>   </span>
+        <div class="block_content">
+        {%- assign block_name = block.settings.grid_id -%}
+                 {% for block in section.blocks %}
+      
+        {%- if block.type == 'question' and block.settings.grid_name == block_name -%} 
+          
+        <div class="question-answer new-content">
+          {% if block.settings.image_link != blank %}
+          <a href="{{block.settings.image_link}}"  target="_blank"><p>{{block.settings.title}}</p></a>
+          {% else %}
+          <p class="question">{{block.settings.title}}</p>
+          <p class="answer hide">{{block.settings.answer}}</p>
+          {% endif %}
+        </div>
+        
+        {%- endif -%}
+        {% if block.type == 'page_link' and block.settings.grid_name == block_name %}
+          <div class="new-content"> <a href="{{ block.settings.text-b}}"  target="_blank"><p>{{block.settings.title}}</p></a></div>
+        {% endif %}
+        {% endfor %}  
+        </div>
+        <p class="image-content1" style="display:none;">{{block.settings.image_content_1}}</p>
+       
+       {% if block.settings.button_text != blank %}
+        <button type="button" class="btn custom__btn" onclick="myFunction()">
+         {{block.settings.button_text}}
+        </button>
+      
+            {% endif %}
+      <button type="button" style="display:none;" class="btn less__btn">close</button>
+    </div>
+    </div>
+      {% endif %}
+    
+    {% endfor %}
+  </div>
+  <div class="row review">
+  </div>
+</div>
+{% endif %}
+{% schema %}
+  {
+    "name": "FAQ-contact-us",
+    "settings": [
+       {
+          "type": "checkbox",
+          "id": "enable_this_section",
+          "label": "Enable Section"
+       }
+   ],
+"blocks": [
+  {
+    "name": "Grid Block",
+     "type": "text",
+    "settings": [
+      {
+      "type": "text",
+      "id": "grid_id",
+      "label": "Grid Id"
+      },
+       {
+          "type": "image_picker",
+          "id": "image_picker",
+          "label": "Image"
+       },
+{  "type": "html",
+          "id": "svg_img",
+          "label": "Svg Icon"},
+       {
+          "type": "text",
+          "id": "title",
+          "label": "Heading"
+       },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text"
+
+      }
+       
+      ]
+    }
+,{
+    "name": "Question Answer",
+     "type": "question",
+    "settings": [
+       {
+          "type": "text",
+          "id": "grid_name",
+          "label": "Grid Id"
+       },
+       {
+       "type": "text",
+       "id": "title",
+      "label": "Question"
+     
+       },
+  {
+          "type": "url",
+          "id": "image_link",
+          "label": "link"
+       },
+       {
+      "id": "answer",
+      "type": "text",
+      "label": "Answer"
+     
+       }
+
+       
+      ]
+    }
+,{
+    "name": "Page Link",
+     "type": "page_link",
+    "settings": [
+      
+       {
+       "type": "text",
+       "id": "grid_name",
+      "label": "Grid Id",
+"info":"grid id is refrence for grid in which this link will go"
+     
+       },
+
+       {
+       "type": "url",
+       "id": "text-b",
+      "label": "Link"
+     
+       },
+
+       {
+      "id": "title",
+      "type": "text",
+      "label": "content"
+     
+       }
+      ]
+    }
+   ]
+  }
+{% endschema %}
+<style>
+  .faq-icon{
+  max-width:100px;
+    width:100%;
+  }
+  .faq-icon.index-2{
+  padding:8px;z0
+  }
+  .a{
+    border:1px solid gray;
+    text-align:center;
+    height:100%;
+    padding:15px;
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+  }
+
+
+
+  .question,.answer{
+  margin:0;
+  }
+  .question-answer{
+  margin-bottom:15px;
+  }
+  .a span{
+    display: block;
+    width: 2em;
+    height: 0;
+    margin: 1em auto;
+    border-top: solid 1px #adadad;
+  }
+  .hide{
+  display:none;
+  }
+  .a button{
+   margin-top: auto;
+  }
+  .less__btn, .custom__btn{
+    width: 50%;
+    margin: 0 auto;
+  }
+  .row.faq{
+  display:flex;
+    flex-wrap:wrap;
+  }
+  .faq-main {
+    width: 33.33%;
+    float: left;
+    text-align: center;
+    padding: 10px 20px;
+}
+  @media screen and (max-width: 767px) {
+  .row.faq {
+    display: flex;
+    flex-direction: column;
+  }
+  .faq-main {
+    width: 100%;
+  }
+}
+  .block_content .new-content{
+  display:none;
+  }
+.block_content .new-content:first-child,
+  .block_content .new-content:nth-child(2),
+  .block_content .new-content:nth-child(3){
+  display:block;
+  }
+  button.btn.custom__btn, button.btn.less__btn {
+    background-color: white;
+	border: 1px solid #17302e;
+    color: black;
+    text-transform: uppercase;
+    font-size: 14px;
+    min-height: 42px;
+    height: 40px;
+    padding: unset;
+}
+  button.btn.custom__btn:hover, button.btn.less__btn:hover {
+    background-color: #60d2e1;
+    color: white;
+    border: none;
+    min-height: 42px;
+    height: 40px;
+    transition: .5s linear;
+  }
+  .new-content p {
+    margin: 0 0 15px;
+    font-style: normal;
+    line-height: 1.6em;
+  }
+  .new-content p:hover {
+    color: #03a196;
+	transition: color .1s linear;
+  }
+  .faq-main h4 {
+	text-transform: uppercase;
+    font-weight: normal; 
+    font-size: 18px;
+  }
+  .text-primary:hover{
+    color:rgb(96 210 225);
+  }
+ </style>
+
+<script>
+  
+      //================== FAQ page read more read less functionality=========
+      $(".custom__btn").click(function(){
+        var find_data = $(this).closest('.faq-main').data("tab-index");
+        
+        $('[data-tab-index='+find_data +'] .new-content').slideDown(); 
+        $(this).css('display','none');
+        $(this).parent().find(".less__btn").css('display','block');
+      }); 
+      $(".less__btn").click(function(){
+        var find_data = $(this).closest('.faq-main').data("tab-index");
+           $('[data-tab-index='+find_data +'] .new-content').eq(0).addClass('no'); 
+           $('[data-tab-index='+find_data +'] .new-content').eq(1).addClass('no'); 
+        $('[data-tab-index='+find_data +'] .new-content').eq(2).addClass('no');
+        $('[data-tab-index='+find_data +'] .new-content:not(".no")').slideUp(); 
+//         $('[data-tab-index='+find_data +'] .new-content').eq(1).slideDown(); 
+//         $('[data-tab-index='+find_data +'] .new-content').eq(2).slideDown(); 
+        $(this).css('display','none');
+        $(this).parent().find(".custom__btn").css('display','block');
+      });
+//       $('.question').click(function(){
+//       $(this).parent().find('.answer').toggle('slow');
+//       })
+  //================== FAQ page read more read less functionality end=========
+</script>  

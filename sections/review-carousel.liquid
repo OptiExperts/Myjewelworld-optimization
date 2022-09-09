@@ -1,0 +1,50 @@
+<!-----sections/review-carousel.liquid---->
+
+<div class="caro-bg container">
+  <div class="">
+    <div class="">
+      <h2 class="carousel-title">What People Say About Us</h2>
+      <p class="carousel-title">The nice things that our customers say about us on Trustpilot</p>
+    </div>
+  </div>
+  <div class="carousel" >
+<!-- TrustBox widget - Slider -->
+<div class="trustpilot-widget" data-locale="en-US" data-template-id="54ad5defc6454f065c28af8b" data-businessunit-id="5d0b8bcb2846d90001ac13e4" data-style-height="240px" data-style-width="100%" data-theme="light" data-stars="4,5" data-review-languages="en">
+  <a href="https://www.trustpilot.com/review/myjewelworld.co.uk" target="_blank" rel="noopener">Trustpilot</a>
+</div>
+<!-- End TrustBox widget -->
+</div>
+</div>
+
+{% schema %}
+  {
+    "name": "Review Carousel",
+    "settings": [],
+    "presets": [
+     {
+       "name": "Review Carousel",
+       "category": "review carousel"
+     }
+    ]
+  }
+{% endschema %}
+
+<style>
+  
+.caro-bg.container {
+  background-color: #f8f9fa;
+  margin-top: 60px;
+  margin: 30px auto;
+  max-width: 1200px;
+  width: 100%;
+}
+.carousel-title {
+  text-align: center;
+  margin: 0;
+  padding-top: 20px;
+}
+p.carousel-title {
+    font-size: 15px;
+}
+
+</style>

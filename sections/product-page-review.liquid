@@ -1,0 +1,32 @@
+{% if section.settings.enable_review == true %}
+<div class="container product-reviews" >
+  <div class="row">
+    <div class="col reviews" id="tdsreviews" style="text-align:center;margin-bottom:25px">
+      <h3 class="garamond">Customer Reviews</h3>
+      <h5 class="pb-4"> Trusted reviews by real My Jewel World customers brought to you by TrustPilot. </h5>             
+    </div>
+
+   </div>
+
+</div>
+{% endif %}
+{% schema %}
+  {
+    "name": "Product page review",
+    "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_review",
+      "label": "Show review",
+       "default": true
+    }
+   ],
+   "presets":[
+    {
+    "name":"Product Page Review",
+    "category":"review"
+    }
+   ]
+  }
+{% endschema %}
+
