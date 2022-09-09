@@ -9823,7 +9823,7 @@ html:not(.js) .announcement__scale.ticker--unloaded {
   align-items: center;
   justify-content: space-between;
   text-align: left;
-  transition: color 0.4s cubic-bezier(0.215, 0.61, 0.355, 1), background 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+
 }
 .sliderow:hover .sliderow__title {
 /*   background: var(--bg-accent); */
