@@ -8251,7 +8251,7 @@ form .errors {
 
 .header__desktop__button .navlink:not(.navlink--toplevel) {
   padding: 5px 11px;
-  transition: 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+
 }
 
 .header__icons--size-large .icon {
@@ -8300,7 +8300,7 @@ form .errors {
   position: relative;
   padding: 15px;
   font-weight: var(---font-weight-body-bold);
-  transition: opacity 0.25s linear, color 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+
   z-index: 6;
 }
 .navlink--toplevel::after {
@@ -8404,7 +8404,7 @@ form .errors {
 .js__header__stuck .theme__header::after {
   opacity: 1;
   visibility: visible;
-  transition-delay: 0s;
+
 }
 
 .js__header__stuck--animated .theme__header {
@@ -8425,7 +8425,7 @@ form .errors {
   position: absolute;
   top: 0;
   z-index: -5;
-  transition: opacity 0.2s cubic-bezier(0.215, 0.61, 0.355, 1), visibility 0s linear 0.2s;
+  
   opacity: 0;
   visibility: hidden;
   background: var(--bg);
@@ -8441,7 +8441,7 @@ form .errors {
   height: 100%;
   object-fit: contain;
   opacity: 0;
-  transition: opacity 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+
 }
 
 .logo__img--transparent {
@@ -8489,7 +8489,7 @@ form .errors {
 }
 [data-header-transparent=true]:not(.meganav--visible) .header__logo--has-transparent .logo__img--transparent.lazyloaded {
   opacity: 1;
-  transition: opacity 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+
 }
 
 .header__menu {
@@ -8568,7 +8568,7 @@ form .errors {
   border-top: 1px solid var(--border);
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.2s cubic-bezier(0.215, 0.61, 0.355, 1), visibility 0s 0.2s, background-color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1), border 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+
 }
 
 .menu__item:not(.grandparent):hover > .header__dropdown,
@@ -8591,7 +8591,7 @@ form .errors {
 .header__dropdown__image {
   position: relative;
   opacity: 0;
-  transition: opacity 0.75s cubic-bezier(0.215, 0.61, 0.355, 1);
+
 }
 .no-js .header__dropdown__image {
   opacity: 1;
@@ -9168,7 +9168,7 @@ form .errors {
 
 .announcement__scale {
   display: inline-flex;
-  transition: opacity 0.5s linear;
+
 }
 .announcement__scale.ticker--unloaded {
   opacity: 0;
@@ -9207,7 +9207,7 @@ html:not(.js) .announcement__scale.ticker--unloaded {
 [data-slider].announcement__bar-holder .announcement__bar {
   top: 50%;
   opacity: 0 !important;
-  transition: opacity 1s ease !important;
+
   transform: translateY(-50%);
 }
 [data-slider].announcement__bar-holder .announcement__bar.is-selected {
@@ -9287,7 +9287,7 @@ html:not(.js) .announcement__scale.ticker--unloaded {
   width: calc(100vw - var(--scrollbar-width));
   opacity: 0;
   background: #000;
-  transition: opacity 0.3s ease 0.1s, visibility 0s linear 0.4s;
+
 }
 .drawer--visible .drawer__underlay {
   visibility: visible;
@@ -9350,7 +9350,7 @@ html:not(.js) .announcement__scale.ticker--unloaded {
 
 .drawer__content > *:not(.drawer__inner) {
   opacity: 0;
-  transition: opacity 0.8s ease-out;
+
 }
 
 .drawer--visible .drawer__content > *:not(.drawer__inner) {
