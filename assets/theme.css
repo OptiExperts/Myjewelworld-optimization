@@ -8011,14 +8011,14 @@ form .errors {
   --link-hover: var(---color-header-link-hover);
   background-color: var(--bg);
   color: var(--text);
-  transition: background-color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+
 }
 
 .header__desktop__lower {
   border-top: 1px solid var(--border);
   background-color: var(--bg);
   color: var(--text);
-  transition: background-color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1), border-top 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+
 }
 
 .theme__header {
@@ -8043,7 +8043,7 @@ form .errors {
   min-height: 60px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   background: var(--bg);
-  transition: background-color 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+
 }
 
 .header-override-border,
@@ -9601,7 +9601,7 @@ html:not(.js) .announcement__scale.ticker--unloaded {
   -webkit-mask-image: linear-gradient(to top, transparent, black), linear-gradient(to left, transparent var(--scrollbar-width), black var(--scrollbar-width));
   -webkit-mask-size: 100% 20000px;
   -webkit-mask-position: left bottom;
-  transition: mask-position 0.3s, -webkit-mask-position 0.3s;
+
 }
 .header__search__results:hover {
   -webkit-mask-position: left top;
@@ -9639,7 +9639,7 @@ html:not(.js) .announcement__scale.ticker--unloaded {
   height: 0;
   margin: 0;
   opacity: 0;
-  transition: all 0.3s ease;
+  
 }
 
 .is-loading .search__loader {
@@ -9875,7 +9875,7 @@ html:not(.js) .announcement__scale.ticker--unloaded {
   vertical-align: middle;
   transform: rotate(-135deg);
   transform-origin: 50% 50%;
-  transition: all 1s;
+  
   will-change: transform;
 }
 .sliderule__chevron--left::after,
@@ -9935,13 +9935,13 @@ html:not(.js) .announcement__scale.ticker--unloaded {
 
 .sliderule__panel > * {
   opacity: 0;
-  transition: opacity 0.05s ease-out;
+
 }
 
 .sliderule__panel.is-hiding > *,
 .sliderule__panel.is-visible > * {
   opacity: 1;
-  transition: opacity 0.2s ease-out;
+
 }
 
 .sliderule__panel.is-hiding {
@@ -10028,7 +10028,7 @@ html:not(.js) .announcement__scale.ticker--unloaded {
   display: block;
   width: 100%;
   height: 100%;
-  transition: 0.5s ease-in-out;
+
 }
 .hamburger__lines span {
   display: block;
@@ -10038,7 +10038,7 @@ html:not(.js) .announcement__scale.ticker--unloaded {
   background: var(--text);
   opacity: 1;
   transform: rotate(0deg);
-  transition: 0.25s ease-in-out;
+
   border-radius: 3px;
 }
 .hamburger__lines span:nth-child(1) {
@@ -10155,7 +10155,7 @@ html:not(.js) .announcement__scale.ticker--unloaded {
   display: inline-block;
   vertical-align: middle;
   color: inherit;
-  transition: color 0.3s linear;
+
 }
 .breadcrumbs a:hover {
   color: var(--link-hover);
@@ -10886,7 +10886,7 @@ html:not(.js) .announcement__scale.ticker--unloaded {
   left: 0;
   right: 0;
   opacity: 1;
-  transition: all 0.15s ease;
+
 }
 .icon__play--column:hover {
   opacity: 0.75;
@@ -11956,7 +11956,7 @@ body {
   z-index: -1;
   opacity: 0 !important;
   pointer-events: none;
-  transition: z-index 0.3s, opacity 0.3s, visibility 0.3s;
+
 }
 
 .newsletter {
@@ -12024,8 +12024,7 @@ body {
 .newsletter .input-group.newsletter-form input:-webkit-autofill:hover,
 .newsletter .input-group.newsletter-form input:-webkit-autofill:focus,
 .newsletter .input-group.newsletter-form input:-webkit-autofill:active {
-  -webkit-transition: background-color 5000s ease-in-out 0s, border-color 5000s ease-in-out 0s;
-  transition: background-color 5000s ease-in-out 0s, border-color 5000s ease-in-out 0s;
+
   -webkit-text-fill-color: var(--text-newsletter) !important;
 }
 .newsletter .input-group.newsletter-form input::placeholder {
@@ -12041,7 +12040,7 @@ body {
   color: inherit;
   transform: translateY(-50%);
   opacity: 0;
-  transition: opacity 0.3s, visibility 0.3s;
+
 }
 .newsletter .input-group.newsletter-form .btn:active, .newsletter .input-group.newsletter-form .shopify-payment-button .shopify-payment-button__button--unbranded:active, .shopify-payment-button .newsletter .input-group.newsletter-form .shopify-payment-button__button--unbranded:active, .newsletter .input-group.newsletter-form .product__reviews .spr-summary-actions-newreview:active, .product__reviews .newsletter .input-group.newsletter-form .spr-summary-actions-newreview:active {
   transform: none;
@@ -12108,7 +12107,7 @@ body {
   right: 10px;
   padding: 0;
   transform: translateY(-50%);
-  transition: all 0.3s;
+  
 }
 .newsletter__close:hover {
   transform: translateY(-50%) rotate(90deg);
@@ -13266,7 +13265,7 @@ body {
   background-color: transparent;
   border: 1px solid var(--border);
   border-radius: var(---radius-sm);
-  transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+
 }
 .radio__fieldset .radio__button label:hover, .radio__fieldset .radio__button label:active, .radio__fieldset .radio__button label:focus {
   border: 1px solid var(--secondary);
@@ -13291,7 +13290,7 @@ body {
   margin-bottom: -26px;
   border-radius: 0;
   box-shadow: none;
-  transition: all 0.2s;
+
 }
 .radio__fieldset .radio__fieldset-arrow--prev {
   left: 5px;
@@ -13312,7 +13311,7 @@ body {
   vertical-align: middle;
   transform: rotate(-135deg);
   transform-origin: 50% 50%;
-  transition: all 0.4s;
+ 
 }
 
 .radio__fieldset--small {
@@ -13363,7 +13362,7 @@ body {
   padding: calc(var(--inner)/2) var(--inner);
   background-color: var(---color-bg);
   opacity: 0;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+
 }
 @media (hover: none) and (pointer: coarse) {
   .radio__fieldset--swatches {
@@ -13658,7 +13657,7 @@ body {
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s;
+
 }
 @media only screen and (max-width: 749px) {
   .product-grid__loader {
@@ -13838,7 +13837,7 @@ body {
 
 .product-item__bg__inner {
   opacity: 0;
-  transition: opacity 0.25s ease-in-out;
+
 }
 .product-item__bg__inner.is-visible {
   opacity: 1;
@@ -14133,7 +14132,7 @@ body {
   font-size: 0;
   line-height: 1;
   overflow: hidden;
-  transition: opacity 0.25s ease-in-out;
+
 }
 
 .widget__products {
@@ -14148,7 +14147,7 @@ body {
   position: relative;
   min-height: 120px;
   margin-bottom: 30px;
-  transition: all 0.3s ease-out;
+
   border: 1px solid var(---color-border);
 }
 .product__column:last-child {
@@ -14443,7 +14442,7 @@ body.is-focused .product__photo:focus:after, body.is-focused .product__photo.foc
 
 .product__badge-link {
   cursor: default;
-  transition: color 0.25s ease-out;
+
 }
 
 .product__badge .spr-badge:after {
@@ -14568,7 +14567,7 @@ script,
   color: inherit;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.4s, visibility 0.4s;
+
 }
 @media only screen and (max-width: 989px) {
   .product__sharing:not(.password__social-sharing) .share {
@@ -14654,7 +14653,7 @@ script,
   width: 100%;
   transform: translateX(-50%);
   box-shadow: 0 -1px 0 0 currentColor;
-  transition: width 0.2s linear;
+  
   width: 0px;
 }
 .product__sharing-button .product__sharing-button-text:hover:after {
@@ -14756,7 +14755,7 @@ script,
 .cart-popover {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s linear 0.5s, max-height 0s linear 0.5s;
+
   text-align: center;
   transform: translate3d(0, -100%, 0);
   max-height: 100vh;
@@ -14766,7 +14765,7 @@ script,
   max-height: 100vh;
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s linear 0s, max-height 0s linear 0s;
+
   transform: translate3d(0, 0, 0);
 }
 .product__form__errors .close,
@@ -14963,7 +14962,7 @@ script,
   font-size: 0;
 }
 .product__slides .flickity-viewport {
-  transition: height 0.4s;
+  
 }
 @media screen and (max-width: 749px) {    
  #template-product .product__slides.product-single__photos .flickity-viewport {
@@ -14973,7 +14972,7 @@ script,
 .product__slides .flickity-slider > * {
   width: 100%;
   opacity: 0 !important;
-  transition: opacity 1s ease !important;
+
 }
 .product__slides .flickity-slider > *.is-selected {
   opacity: 1 !important;
@@ -15069,7 +15068,7 @@ script,
   opacity: 0;
   pointer-events: none;
   transform: translateY(-50%);
-  transition: opacity 0.2s;
+
 }
 .product__wrapper--thumbnails-left.product__wrapper--thumbnails-small .grid__item.medium-up--one-half:first-child {
   justify-content: flex-end;
@@ -21386,7 +21385,7 @@ ul.tabs--center > li {
 .homepage-slideshow .slick-dots .dot {
   margin-left: 5px;
   margin-right: 5px;
-  transition: all 0.3s ease;
+  
 }
 .homepage-slideshow .flickity-page-dots button,
 .homepage-slideshow .slick-dots button {
@@ -23245,7 +23244,7 @@ ul.tabs--center > li {
   line-height: 30px;
   color: var(--primary);
   text-align: center;
-  transition: all 0.3s ease;
+  
 }
 .product-upsell__btn:hover {
   min-width: calc(37px + var(--btn-text-width));
@@ -23268,7 +23267,7 @@ ul.tabs--center > li {
   opacity: 0;
   font-size: 80%;
   white-space: nowrap;
-  transition: all 0.3s ease;
+  
 }
 @media only screen and (max-width: 479px) {
   .product-upsell__btn-text {
