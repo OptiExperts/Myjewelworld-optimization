@@ -8172,7 +8172,7 @@ form .errors {
   display: flex;
   align-items: center;
   margin-right: 24px;
-  transition: 0.25s ease-in-out;
+  
 }
 .header__icons--text .header__mobile__button .navlink {
   padding: 15px;
@@ -9485,7 +9485,7 @@ html:not(.js) .announcement__scale.ticker--unloaded {
   opacity: 0;
   visibility: hidden;
   max-height: 100vh;
-  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s linear 0.5s;
+
   transform: translate3d(0, -100%, 0);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   background: var(--bg);
@@ -9713,7 +9713,7 @@ html:not(.js) .announcement__scale.ticker--unloaded {
   top: 0;
   left: 100%;
   width: 100%;
-  transition: opacity 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+
   visibility: hidden;
   height: 0;
   opacity: 0;
@@ -9727,14 +9727,14 @@ html:not(.js) .announcement__scale.ticker--unloaded {
   visibility: visible;
   opacity: 1;
   height: auto;
-  transition: opacity 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+
 }
 
 .header__drawer.drawer--visible .drawer__menu > .sliderule__wrapper > [data-animates].is-hidden,
 .drawer__menu > .sliderule__wrapper > [data-animates] {
   opacity: 0;
   transform: translateY(-50%);
-  transition: opacity 0.65s cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s, transform 0.35s cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
+
 }
 
 .header__drawer.drawer--visible .drawer__menu > .sliderule__wrapper > [data-animates] {
@@ -9747,7 +9747,7 @@ html:not(.js) .announcement__scale.ticker--unloaded {
 [data-sliderule-pane] [data-animates] {
   opacity: 0;
   transform: translateY(-50%);
-  transition: opacity 0.65s cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s, transform 0.35s cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
+
 }
 
 [data-sliderule-pane] .is-hiding .sliderow.sliderow__back[data-animates],
@@ -9758,7 +9758,7 @@ html:not(.js) .announcement__scale.ticker--unloaded {
 
 .sliderule-grid > * {
   opacity: 0;
-  transition: opacity 2s cubic-bezier(0.215, 0.61, 0.355, 1);
+
 }
 
 .sliderule-grid > *.is-visible {
@@ -13864,7 +13864,7 @@ body {
   font-size: calc(1rem*var(---font-adjust-body));
   color: var(--text-dark);
   margin: 7px 0 0 0;
-  transition: color 0.3s;
+  
 }
 @media only screen and (max-width: 749px) {
   .product__grid__cutline,
